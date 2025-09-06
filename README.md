@@ -21,7 +21,8 @@
 - -Address
 - -Contact
   \*/
-  Two types of export and import
+
+  # Two types of export and import
 
 1. default export import
 
@@ -32,7 +33,13 @@ import variable from path
    export const component;
    import {component} from "path";
 
-#React hooks
+# React hooks
+
 Normal JS utility functions
 useState() - Superpowerful State varibales in react
 useEffect() -
+
+# Types of Routing in web apps
+
+- Client side routing = page not reload
+- Server Side Routing = page reloads
