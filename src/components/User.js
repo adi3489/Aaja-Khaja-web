@@ -1,6 +1,6 @@
 const User = () => {
   return (
-    <div>
+    <div className="user-card">
       {" "}
       <h2>Name: Aditya</h2>
       <h3>Location: Delhi</h3>
