@@ -5,7 +5,7 @@ const useRestrauntMenu = (resId) => {
   const [resInfo, setresInfo] = useState(null);
   //fetchdata
   useEffect(() => {
-    fetchData();
+    fetchMenu();
   }, []);
 
   const fetchMenu = async () => {

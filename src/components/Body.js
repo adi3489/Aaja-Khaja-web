@@ -47,17 +47,18 @@ const Body = () => {
     <Shimmer />
   ) : (
     <div classsName="body">
-      <div className="filter">
-        <div className="search">
+      <div className="filter flex">
+        <div className="search m-4 p-4">
           <input
             type="text"
-            className="search-box"
+            className="border border-solid border-black"
             value={searchText}
             onChange={(e) => {
               setSearchText(e.target.value);
             }}
           />
           <button
+            className="px-4 py-2 bg bg-green-100 m-4 rouned-lg"
             onClick={() => {
               //filter the restaurants card and update the ui
               //Search
@@ -72,25 +73,27 @@ const Body = () => {
             Search
           </button>
         </div>
-        <button
-          className="filter-btn"
-          // onClick={() => {
-          //   setFilteredRestaurant(filterResta);
-          // }}
-          onClick={() => {
-            //Filter logic buddy
-            const filteredList = listofRestaurants.filter((res) => {
-              return res.info.avgRating > 4;
-            });
-            console.log(filteredList);
-            setFilteredRestaurant(filteredList);
-            // console.log(listofRestaurants);
-          }}
-        >
-          Top Rated Restaurants
-        </button>
+        <div className="search m-4 p-4 flex items-center">
+          <button
+            className="px-4 py-2 bg-gray-100 rounded-lg"
+            // onClick={() => {
+            //   setFilteredRestaurant(filterResta);
+            // }}
+            onClick={() => {
+              //Filter logic buddy
+              const filteredList = listofRestaurants.filter((res) => {
+                return res.info.avgRating > 4;
+              });
+              console.log(filteredList);
+              setFilteredRestaurant(filteredList);
+              // console.log(listofRestaurants);
+            }}
+          >
+            Top Rated Restaurants
+          </button>
+        </div>
       </div>
-      <div className="res-container">
+      <div className=" flex flex-wrap">
         {filteredRestaurant.map((restaurant) => (
           <Link
             key={restaurant.info.id}
