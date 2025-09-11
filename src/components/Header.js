@@ -13,6 +13,7 @@ const Header = () => {
   // useEffect(() => {
   //   console.log("useEffect called");
   // }, [btnNameReact]);
+
   return (
     <div className="flex justify-between bg-pink-100 shadow-lg">
       <div className="logo-container">

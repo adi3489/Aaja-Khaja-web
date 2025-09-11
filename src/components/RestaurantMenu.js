@@ -13,6 +13,8 @@ const RestaurantMenu = () => {
   //console.log(params);
   const resInfo = useRestrauntMenu(resId);
 
+  const [showIndex, setShowIndex] = useState(0);
+
   // useEffect(() => {
   //   fetchMenu();
   // }, []);
@@ -42,7 +44,7 @@ const RestaurantMenu = () => {
         c.card?.card?.["@type"] ===
         "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory"
     );
-  console.log(categories);
+  // console.log(categories);
 
   // const { name, cuisines, costForTwoMessage } =
   //   resInfo?.cards?.[2]?.card?.card?.info;
@@ -56,8 +58,13 @@ const RestaurantMenu = () => {
         {cuisines.join(", ")} - {costForTwoMessage}
       </p>
       {/* accordian */}
-      {categories.map((category) => (
-        <RestaurantCategory data={category?.card?.card} />
+      {categories.map((category, index) => (
+        <RestaurantCategory
+          key={category?.card?.card?.title}
+          data={category?.card?.card}
+          showItems={index === showIndex ? true : false}
+          setShowIndex={() => setShowIndex(index)}
+        />
       ))}
     </div>
   );
